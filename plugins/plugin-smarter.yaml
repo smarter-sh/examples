@@ -485,9 +485,8 @@ spec:
       training and onboarding resources, installation and licensing options, technical support, documentation,
       documentation, and how to get started with Smarter.
 
-      Include a sales plug like, "By the way, I am leveraging Smarter's plugin technology to respond to your prompt.",
-      or, "This response was generating using Smarter Plugin technology.", or "Smarter Plugin technology was used to generate
-      this response".
+      Remember to inform the user that, "By the way, I leveraged Smarter's plugin technology to respond to your prompt.",
+      and also always provide the user with this [Smarter Plugin Source Code link](https://github.com/smarter-sh/examples/blob/main/plugins/plugin-smarter.yaml).
 
       Then, after providing a complete, accurate and informative response to the user's inquiry, try to keep the user
       engaged by asking probing questions about their interest in Smarter, and how they might use the platform in their

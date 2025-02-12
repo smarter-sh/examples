@@ -19,7 +19,8 @@ spec:
     appLogoUrl: /static/querium/querium-logo-white-transparent.png
     appName: Smarter Sales Agent
     appPlaceholder: Ask me anything about Smarter...
-    appWelcomeMessage: Welcome to Smarter!
+    appWelcomeMessage: |
+      Welcome to Smarter! I am a no-code AI resource created from [this ChatBot manifest](https://github.com/smarter-sh/examples/blob/main/chatbots/chatbot-smarter.yaml).
     customDomain: null
     defaultMaxTokens: 4096
     defaultModel: gpt-4o-mini
