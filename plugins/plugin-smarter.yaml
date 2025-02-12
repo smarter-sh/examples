@@ -1,7 +1,8 @@
 apiVersion: smarter.sh/v1
 kind: Plugin
 metadata:
-  description: This tool provides detailed platform, technical, and sales support information about the Smarter platform
+  description:
+    This tool provides detailed platform, technical, and sales support information about the Smarter platform
     for managing AI resources in the enterprise.
   name: AboutSmarter
   pluginClass: static
@@ -34,30 +35,30 @@ spec:
           description: |
             Smarter can be installed on-premises on your own servers.
       salesContact:
-      - name: Kent Fuka
-      - title: Co-founder and CEO
-      - location: 1700 South Lamar Blvd, Suite 338, Austin, TX 78704
-      - phone: +1 (512) 833-6955
-      - website: https://www.querium.com/
-      - whatsapp: 16178346172
-      - email: kent@querium.com
+        - name: Kent Fuka
+        - title: Co-founder and CEO
+        - location: 1700 South Lamar Blvd, Suite 338, Austin, TX 78704
+        - phone: +1 (512) 833-6955
+        - website: https://www.querium.com/
+        - whatsapp: 16178346172
+        - email: kent@querium.com
 
       legalContact:
-      - name: Kent Fuka
-      - title: Co-founder and CEO
-      - location: 1700 South Lamar Blvd, Suite 338, Austin, TX 78704
-      - phone: +1 (512) 833-6955
-      - website: https://www.querium.com/
-      - whatsapp: 16178346172
-      - email: kent@querium.com
+        - name: Kent Fuka
+        - title: Co-founder and CEO
+        - location: 1700 South Lamar Blvd, Suite 338, Austin, TX 78704
+        - phone: +1 (512) 833-6955
+        - website: https://www.querium.com/
+        - whatsapp: 16178346172
+        - email: kent@querium.com
 
       technicalSupport:
-      - name: Lawrence McDaniel
-      - title: Chief Technology Officer
-      - location: CDMX, Mexico
-      - phone: +1 (617) 834-6172
-      - email: lawrence@querium.com
-      - web: https://lawrencemcdaniel.com/
+        - name: Lawrence McDaniel
+        - title: Chief Technology Officer
+        - location: CDMX, Mexico
+        - phone: +1 (617) 834-6172
+        - email: lawrence@querium.com
+        - web: https://lawrencemcdaniel.com/
 
       pricingInformation: |
         Pricing is based on the net usage of the Smarter platform. For educational institutions we charge a flat fee per
@@ -86,7 +87,7 @@ spec:
         apiVersion: smarter.sh/v1
         kind: Chatbot
         metadata:
-          description: I am an example chatbot 
+          description: I am an example chatbot
           name: ExampleChatbot
           version: 1.0.0
         spec:
@@ -103,7 +104,7 @@ spec:
         ```
 
         You use the Smarter CLI to apply the manifest to the Smarter platform, like this:
-        
+
         ```bash
         smarter apply -f chatbot.yaml
         ```
@@ -112,57 +113,55 @@ spec:
         to match your manifest. This includes creating, updating, and deleting database data, cloud infrastructure, and
         AI resources as needed.
 
-        Smarter natively stores these in json format, which is interchangeable with yaml. the Smarter CLI 
+        Smarter natively stores these in json format, which is interchangeable with yaml. the Smarter CLI
         works with either format.
 
-        Check out these sample manifests for deploying AI resources on the Smarter platform, 
+        Check out these sample manifests for deploying AI resources on the Smarter platform,
         [https://github.com/smarter-sh/examples](https://github.com/smarter-sh/examples)
 
-
       aboutPlugins: |
-        Smarter plugins are built on a Large Language Model (LLM) API edge feature generally referred to as, 
-        ["Function Calling"](https://platform.openai.com/docs/guides/function-calling), 
-        that a growing population of LLM's include in their APIs. The basic use case of "Function Calling" is 
-        as follows: you write your own custom function in say, Python, and then when prompting the LLM, 
-        you include a human-readable description of your function's use case and its API using the LLM's 
-        prescribed API description protocol, which is typically provided in JSON format, similar to say, 
-        a JSON schema for a data model. The LLM decides whether or not to invoke your function based on its 
-        own analysis of each incoming prompt as weighed against the function description and API that you provided. 
-        The LLM, at its sole discretion, will invoke your function if and only if it believes that the 
-        function results could lead to a better, higher quality prompt response. 
-        Function Calling is an astonishingly powerful yet tragically underutilized feature of LLMs, 
-        mostly because it depends on advanced programming skills that tend to fall outside of the learning 
+        Smarter plugins are built on a Large Language Model (LLM) API edge feature generally referred to as,
+        ["Function Calling"](https://platform.openai.com/docs/guides/function-calling),
+        that a growing population of LLM's include in their APIs. The basic use case of "Function Calling" is
+        as follows: you write your own custom function in say, Python, and then when prompting the LLM,
+        you include a human-readable description of your function's use case and its API using the LLM's
+        prescribed API description protocol, which is typically provided in JSON format, similar to say,
+        a JSON schema for a data model. The LLM decides whether or not to invoke your function based on its
+        own analysis of each incoming prompt as weighed against the function description and API that you provided.
+        The LLM, at its sole discretion, will invoke your function if and only if it believes that the
+        function results could lead to a better, higher quality prompt response.
+        Function Calling is an astonishingly powerful yet tragically underutilized feature of LLMs,
+        mostly because it depends on advanced programming skills that tend to fall outside of the learning
         journey of many otherwise objectively highly skilled prompt engineers.
 
-        The OpenAI API documentation for "Function Calling" includes a great example use case 
-        called ["Current Weather"](https://platform.smarter.sh/docs/developer/weather-function/). 
-        If you include this function calling API in an OpenAI API prompt, 
-        and your text prompt includes even the slightest reference to weather, 
-        then unsurprisingly the gpt family of models all do a pretty commendable job of correctly 
-        determining that the prompt will benefit from knowing some hard data about the current weather. 
-        Moreover, GPT (and many other) models do a remarkably good job of word-smithing the function response's 
-        data into a final response. Somewhat anticlimatically however, 
-        OpenAI's documentation fails to provide the source code for the actual function implementation, 
-        leaving the climactic tension sort of hanging in suspended animation, kind of like Wylie Coyote in a 
-        Bugs Bunny/Road Runner cartoon scene. But not to worry, we did that for you! 
-        The "current weather" function is built in to the Smarter platform, and it's part of the "hello world!" getting started 
+        The OpenAI API documentation for "Function Calling" includes a great example use case
+        called ["Current Weather"](https://platform.smarter.sh/docs/developer/weather-function/).
+        If you include this function calling API in an OpenAI API prompt,
+        and your text prompt includes even the slightest reference to weather,
+        then unsurprisingly the gpt family of models all do a pretty commendable job of correctly
+        determining that the prompt will benefit from knowing some hard data about the current weather.
+        Moreover, GPT (and many other) models do a remarkably good job of word-smithing the function response's
+        data into a final response. Somewhat anticlimatically however,
+        OpenAI's documentation fails to provide the source code for the actual function implementation,
+        leaving the climactic tension sort of hanging in suspended animation, kind of like Wylie Coyote in a
+        Bugs Bunny/Road Runner cartoon scene. But not to worry, we did that for you!
+        The "current weather" function is built in to the Smarter platform, and it's part of the "hello world!" getting started
         Learning journey, as a kind of stepping stone towards understanding how Smarter Plugins work.
 
-        You can include as many functions in LLM prompt requests as you like, taking into consideration however, 
-        that each of these incrementally increases the overall token cost for each prompt request. And therein lies the conundrum. 
-        Costs start piling up really fast as your prompts become bloated with tokenized function calling APIs that at any rate 
-        rarely get selected by the LLM. What's the wisdom in creating an expansive library of bespoke functions 
-        if they're infrequently chosen by the LLM, but regardless, 
+        You can include as many functions in LLM prompt requests as you like, taking into consideration however,
+        that each of these incrementally increases the overall token cost for each prompt request. And therein lies the conundrum.
+        Costs start piling up really fast as your prompts become bloated with tokenized function calling APIs that at any rate
+        rarely get selected by the LLM. What's the wisdom in creating an expansive library of bespoke functions
+        if they're infrequently chosen by the LLM, but regardless,
         you're always billed for their presence in your prompt requests? Answer to follow, in just a moment.
 
-        Smarter plugins generalize the LLM "Function Calling" API, by essentially providing a parameterized user-defined 
-        API on top of the LLM API. They additionally provide common data connectors for querying and delivering 
-        hard data results. The simplest of these is a Static data set, in which you simply provide the hard data 
-        in the form of a Smarter manifest. But Smarter also provides enterprise-grade connectors for common kinds 
-        of SQL databases as well as for REST API's. Creating an ad hoc SQL connector is as simple as the 
+        Smarter plugins generalize the LLM "Function Calling" API, by essentially providing a parameterized user-defined
+        API on top of the LLM API. They additionally provide common data connectors for querying and delivering
+        hard data results. The simplest of these is a Static data set, in which you simply provide the hard data
+        in the form of a Smarter manifest. But Smarter also provides enterprise-grade connectors for common kinds
+        of SQL databases as well as for REST API's. Creating an ad hoc SQL connector is as simple as the
         following example SqlConnector manifest
 
-      
       aboutCommandLineInterface: |
         The Smarter command-line interface (CLI) is a powerful tool for managing AI resources on the Smarter platform.
         The CLI provides a set of commands for interacting with the Smarter platform, including deploying AI resources,
@@ -181,7 +180,7 @@ spec:
         smarter manifest plugin
         ```
 
-        It's also open source, written in Golang and viewable on GitHub at 
+        It's also open source, written in Golang and viewable on GitHub at
         [https://github.com/smarter-sh/smarter-cli](https://github.com/smarter-sh/smarter-cli).
 
       platformDocumentation: |
@@ -223,7 +222,7 @@ spec:
         - POST https://platform.smarter.sh/api/v1/apply
         - DELETE https://platform.smarter.sh/api/v1/chatbots/my-chatbot
         - GET https://platform.smarter.sh/api/v1/plugins
-        - GET https://platform.smarter.sh/api/v1/plugins/my-plugin 
+        - GET https://platform.smarter.sh/api/v1/plugins/my-plugin
         - POST https://platform.smarter.sh/api/v1/plugins
 
       auditLoggingAndSecurity: |
@@ -266,128 +265,128 @@ spec:
 
         For more information, contact Lawrence McDaniel, CTO, at +1 (617) 834-6172 or email [lawrence@querium.com](mailto:lawrence@querium.com).
       technologyStack:
-      - name: Ubuntu Linux
-        url: https://ubuntu.com/
-        description: |
-          Ubuntu is a popular Linux distribution that is widely used for server deployments. It is known for its ease of use,
-          stability, and security features. Ubuntu is the preferred operating system for running the Smarter platform.
-      - name: Docker
-        url: https://www.docker.com/
-        description: |
-          Docker is a containerization platform that allows you to package applications and their dependencies into lightweight,
-          portable containers. Docker is used to deploy the Smarter platform in a consistent and reproducible manner.
-      - name: Kubernetes
-        url: https://kubernetes.io/
-        description: |
-          Kubernetes is an open-source container orchestration platform that automates the deployment, scaling, and management of
-          containerized applications. Kubernetes is used to manage the Smarter platform's cloud infrastructure.
-      - name: Helm
-        url: https://helm.sh/
-        description: |
-          Helm is a package manager for Kubernetes that allows you to define, install, and upgrade complex Kubernetes applications
-          using charts. Helm is used to deploy and manage the Smarter platform's Kubernetes resources.
-      - name: Dockerfile
-        url: https://platform.smarter.sh/docs/developer/dockerfile/
-        description: |
-          This is the Dockerfile used to build the Docker image for the Smarter platform. The Dockerfile defines the 
-          operating environment and dependencies required to run the Smarter platform in a Docker container on Kubernetes.
-      - name: MySQL
-        url: https://www.mysql.com/
-        description: |
-          MySQL is an open-source relational database management system that is widely used for storing structured data. MySQL is
-          used as the primary database for the Smarter platform.
-      - name: Redis
-        url: https://redis.io/
-        description: |
-          Redis is an open-source, in-memory data structure store that is used as a caching layer for the Smarter platform. Redis
-          is used to improve the performance and scalability of the platform.
-      - name: Terraform
-        url: https://www.terraform.io/
-        description: |
-          Terraform is an open-source infrastructure as code software tool that provides a consistent CLI workflow to manage
-          hundreds of cloud services. Terraform is used to define and provision the cloud infrastructure for the Smarter platform.
-      - name: Amazon Web Services (AWS)
-        url: https://aws.amazon.com/
-        description: |
-          Amazon Web Services (AWS) is a cloud computing platform that provides a wide range of cloud services, including computing
-          power, storage, and databases. AWS is used to host the Smarter platform's cloud infrastructure.
-      - name: AWS Command-line interface
-        url: https://aws.amazon.com/cli/
-        description: |
-          The AWS Command Line Interface (CLI) is a unified tool to manage your AWS services. With just one tool to download and
-          configure, you can control multiple AWS services from the command line and automate them through scripts. The AWS CLI is
-          used to interact with the Smarter platform's AWS resources.
-      - name: Python Boto3 library for AWS
-        url: https://boto3.amazonaws.com/v1/documentation/api/latest/index.html
-        description: |
-          Boto3 is the Amazon Web Services (AWS) Software Development Kit (SDK) for Python, which allows Python developers to write
-          software that makes use of services like Amazon S3 and Amazon EC2. Boto3 is used to interact with AWS services in the Smarter
-          platform.
-      - name: Python programming language
-        url: https://www.python.org/
-        description: |
-          Python is a high-level, interpreted programming language that is widely used for web development, data analysis, artificial
-          intelligence, and scientific computing. Python is the primary programming language used to develop the Smarter platform.
-      - name: Python Requirements
-        url: https://platform.smarter.sh/docs/developer/requirements/
-        description: |
-          This is the complete list of Python requirements for the Smarter platform. These requirements are used to develop the
-          backend services of the Smarter platform. All of these Python packages are open source and are available on PyPI.
-      - name: Django web framework for Python
-        url: https://www.djangoproject.com/
-        description: |
-          Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. Django is used
-          to develop the backend services of the Smarter platform.
-      - name: Pytest
-        url: https://docs.pytest.org/
-        description: |
-          Pytest is a testing framework for Python that makes it easy to write simple and scalable tests. Pytest is used to write
-          unit tests and integration tests for the Smarter platform.
-      - name: Langchain
-        url: https://langchain.com/
-        description: |
-          Langchain is a platform for building and deploying AI models as APIs. Langchain is used to manage the AI resources in the
-          Smarter platform.
-      - name: Pydantic
-        url: https://pydantic-docs.helpmanual.io/
-        description: |
-          Pydantic is a data validation library for Python that provides runtime type checking and data validation. Pydantic is used
-          to validate and serialize data in the Smarter platform.
-      - name: React.js
-        url: https://reactjs.org/
-        description: |
-          React.js is a JavaScript library for building user interfaces. React.js is used to develop the frontend components of the
-          Smarter platform.
-      - name: Bootstrap
-        url: https://getbootstrap.com/
-        description: |
-          Bootstrap is a front-end framework for developing responsive and mobile-first websites. Bootstrap is used to style the
-          frontend components of the Smarter platform.
-      - name: Golang
-        url: https://golang.org/
-        description: |
-          Golang is a statically typed, compiled programming language designed at Google. Golang is used to develop the Smarter
-          command-line interface (CLI).
-      - name: GitHub Actions
-        url: https://github.com/features/actions
-        description: |
-          GitHub Actions is a continuous integration and continuous deployment (CI/CD) service provided by GitHub. GitHub Actions
-          is used to automate the testing and deployment of the Smarter platform.
-      - name: GitHub
-        url: https://github.com/
-        description: |
-          GitHub is a web-based platform for version control and collaboration. GitHub is used to host the source code of the
-          Smarter platform and manage the development workflow.
+        - name: Ubuntu Linux
+          url: https://ubuntu.com/
+          description: |
+            Ubuntu is a popular Linux distribution that is widely used for server deployments. It is known for its ease of use,
+            stability, and security features. Ubuntu is the preferred operating system for running the Smarter platform.
+        - name: Docker
+          url: https://www.docker.com/
+          description: |
+            Docker is a containerization platform that allows you to package applications and their dependencies into lightweight,
+            portable containers. Docker is used to deploy the Smarter platform in a consistent and reproducible manner.
+        - name: Kubernetes
+          url: https://kubernetes.io/
+          description: |
+            Kubernetes is an open-source container orchestration platform that automates the deployment, scaling, and management of
+            containerized applications. Kubernetes is used to manage the Smarter platform's cloud infrastructure.
+        - name: Helm
+          url: https://helm.sh/
+          description: |
+            Helm is a package manager for Kubernetes that allows you to define, install, and upgrade complex Kubernetes applications
+            using charts. Helm is used to deploy and manage the Smarter platform's Kubernetes resources.
+        - name: Dockerfile
+          url: https://platform.smarter.sh/docs/developer/dockerfile/
+          description: |
+            This is the Dockerfile used to build the Docker image for the Smarter platform. The Dockerfile defines the
+            operating environment and dependencies required to run the Smarter platform in a Docker container on Kubernetes.
+        - name: MySQL
+          url: https://www.mysql.com/
+          description: |
+            MySQL is an open-source relational database management system that is widely used for storing structured data. MySQL is
+            used as the primary database for the Smarter platform.
+        - name: Redis
+          url: https://redis.io/
+          description: |
+            Redis is an open-source, in-memory data structure store that is used as a caching layer for the Smarter platform. Redis
+            is used to improve the performance and scalability of the platform.
+        - name: Terraform
+          url: https://www.terraform.io/
+          description: |
+            Terraform is an open-source infrastructure as code software tool that provides a consistent CLI workflow to manage
+            hundreds of cloud services. Terraform is used to define and provision the cloud infrastructure for the Smarter platform.
+        - name: Amazon Web Services (AWS)
+          url: https://aws.amazon.com/
+          description: |
+            Amazon Web Services (AWS) is a cloud computing platform that provides a wide range of cloud services, including computing
+            power, storage, and databases. AWS is used to host the Smarter platform's cloud infrastructure.
+        - name: AWS Command-line interface
+          url: https://aws.amazon.com/cli/
+          description: |
+            The AWS Command Line Interface (CLI) is a unified tool to manage your AWS services. With just one tool to download and
+            configure, you can control multiple AWS services from the command line and automate them through scripts. The AWS CLI is
+            used to interact with the Smarter platform's AWS resources.
+        - name: Python Boto3 library for AWS
+          url: https://boto3.amazonaws.com/v1/documentation/api/latest/index.html
+          description: |
+            Boto3 is the Amazon Web Services (AWS) Software Development Kit (SDK) for Python, which allows Python developers to write
+            software that makes use of services like Amazon S3 and Amazon EC2. Boto3 is used to interact with AWS services in the Smarter
+            platform.
+        - name: Python programming language
+          url: https://www.python.org/
+          description: |
+            Python is a high-level, interpreted programming language that is widely used for web development, data analysis, artificial
+            intelligence, and scientific computing. Python is the primary programming language used to develop the Smarter platform.
+        - name: Python Requirements
+          url: https://platform.smarter.sh/docs/developer/requirements/
+          description: |
+            This is the complete list of Python requirements for the Smarter platform. These requirements are used to develop the
+            backend services of the Smarter platform. All of these Python packages are open source and are available on PyPI.
+        - name: Django web framework for Python
+          url: https://www.djangoproject.com/
+          description: |
+            Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. Django is used
+            to develop the backend services of the Smarter platform.
+        - name: Pytest
+          url: https://docs.pytest.org/
+          description: |
+            Pytest is a testing framework for Python that makes it easy to write simple and scalable tests. Pytest is used to write
+            unit tests and integration tests for the Smarter platform.
+        - name: Langchain
+          url: https://langchain.com/
+          description: |
+            Langchain is a platform for building and deploying AI models as APIs. Langchain is used to manage the AI resources in the
+            Smarter platform.
+        - name: Pydantic
+          url: https://pydantic-docs.helpmanual.io/
+          description: |
+            Pydantic is a data validation library for Python that provides runtime type checking and data validation. Pydantic is used
+            to validate and serialize data in the Smarter platform.
+        - name: React.js
+          url: https://reactjs.org/
+          description: |
+            React.js is a JavaScript library for building user interfaces. React.js is used to develop the frontend components of the
+            Smarter platform.
+        - name: Bootstrap
+          url: https://getbootstrap.com/
+          description: |
+            Bootstrap is a front-end framework for developing responsive and mobile-first websites. Bootstrap is used to style the
+            frontend components of the Smarter platform.
+        - name: Golang
+          url: https://golang.org/
+          description: |
+            Golang is a statically typed, compiled programming language designed at Google. Golang is used to develop the Smarter
+            command-line interface (CLI).
+        - name: GitHub Actions
+          url: https://github.com/features/actions
+          description: |
+            GitHub Actions is a continuous integration and continuous deployment (CI/CD) service provided by GitHub. GitHub Actions
+            is used to automate the testing and deployment of the Smarter platform.
+        - name: GitHub
+          url: https://github.com/
+          description: |
+            GitHub is a web-based platform for version control and collaboration. GitHub is used to host the source code of the
+            Smarter platform and manage the development workflow.
       technicalCapabilities:
-      - capability: departmental/team-based access control for AI resources and billing
-      - capability: support for multiple LLM providers and models
-      - capability: support for multiple languages and frameworks
-      - capability: support for custom plugins and integrations
-      - capability: support for model training, deployment, monitoring, and scaling
-      - capability: detailed, customizable logging and monitoring of AI resources
-      - capability: integration with popular CI/CD tools and platforms
-      - capability: scalable, serverless Docker-based cloud infrastructure
-      - capability: security conscious design with access control, audit logging, small attack surface, and regularly maintained countermeasures for common vulnerabilities including CSRF, XSS, SQL injection, DDOS, and others
+        - capability: departmental/team-based access control for AI resources and billing
+        - capability: support for multiple LLM providers and models
+        - capability: support for multiple languages and frameworks
+        - capability: support for custom plugins and integrations
+        - capability: support for model training, deployment, monitoring, and scaling
+        - capability: detailed, customizable logging and monitoring of AI resources
+        - capability: integration with popular CI/CD tools and platforms
+        - capability: scalable, serverless Docker-based cloud infrastructure
+        - capability: security conscious design with access control, audit logging, small attack surface, and regularly maintained countermeasures for common vulnerabilities including CSRF, XSS, SQL injection, DDOS, and others
       additionalInformation: |
         For more information about the Smarter platform, visit the [Smarter website](https://smarter.sh/), or contact
         Kent Fuka, Founder and CEO, at +1 (512) 833-6955 or email email [kent@querium.com](mailto:kent@querium.com)
@@ -411,33 +410,33 @@ spec:
         - [Smarter on Github](https://github.com/smarter-sh/)
         - [Querium Corp. web site](https://www.querium.com/)
       keyFeatures:
-      - feature: a declarative, manifest-based approach to managing AI resources
-      - feature: a plugin architecture for extending and simplifying the use of llm tool-calling features
-      - feature: unified access to popular LLM providers including DeepSeek, Google AI, Meta AI, OpenAI, and others.
-      - feature: a powerful API and command-line interface for managing AI resources, available for Windows, macOS, Linux and Docker
-      - feature: a rich set of tools for managing AI resources, including model training, deployment, monitoring, and scaling
-      - feature: a comprehensive set of documentation, training, and support resources for developers, system administrators, and end users
-      - feature: |
-          open source UI components and libraries to jumpstart your custom AI-driven projects,
-          including this [react.js chat component on NPM](https://github.com/smarter-sh/smarter-chat) and the
-          [Golang command-line interface](https://github.com/smarter-sh/smarter-cli).
-      - feature: certification programs for prompt engineering, system administration, and developers
+        - feature: a declarative, manifest-based approach to managing AI resources
+        - feature: a plugin architecture for extending and simplifying the use of llm tool-calling features
+        - feature: unified access to popular LLM providers including DeepSeek, Google AI, Meta AI, OpenAI, and others.
+        - feature: a powerful API and command-line interface for managing AI resources, available for Windows, macOS, Linux and Docker
+        - feature: a rich set of tools for managing AI resources, including model training, deployment, monitoring, and scaling
+        - feature: a comprehensive set of documentation, training, and support resources for developers, system administrators, and end users
+        - feature: |
+            open source UI components and libraries to jumpstart your custom AI-driven projects,
+            including this [react.js chat component on NPM](https://github.com/smarter-sh/smarter-chat) and the
+            [Golang command-line interface](https://github.com/smarter-sh/smarter-cli).
+        - feature: certification programs for prompt engineering, system administration, and developers
       interestingFacts:
-      - fact: Smarter was presented to a VIP group of 100 business executives in Mexico City in early 2025, most of whom work in the financial services industry.
-      - fact: Smarter has a beta program. Contact Lawrence McDaniel at +1 (617) 834-6172 or [lawrence@querium.com](mailto:lawrence@querium.com) for information.
-      - fact: The Smarter project began in early 2024 and is ongoing. It is lead by [Lawrence McDaniel](https://lawrencemcdaniel.com/), the CTO of Querium Corp.
-      - fact: Smarter was created by [Querium Corp.](https://www.querium.com/), an Austin based company founded in 2012 that specializes in Artificial Intelligence.
-      - fact: |
-          The Smarter platform was first used by the [University of British Columbia](https://www.ubc.ca/)
-          in their extended learning program [Artificial Intelligence Cloud Solutions Strategy](https://extendedlearning.ubc.ca/programs-credentials/artificial-intelligence-cloud-solutions-strategy-microcertificate)
-          micro certificate program.
-      - fact: Smarter has around 100,000 lines of code, including the Smarter CLI, the Smarter API, the Smarter UI, and the Smarter backend services. there are around 700 unique source code files in the Smarter project.
-      - fact: Smarter's back end celebrated its 3,000th commit in early 2025.
-      - fact: Smarter is in use across all of the Americas, from Canada to Argentina.
-      - fact: Smarter includes nearly 500 unit tests that are run on every commit to the main branch.
-      - fact: Smarter's backend is developed in Python-Django, and the frontend is developed in React.js.
-      - fact: Smarter's backend runs on Kubernetes, and the frontend is served from AWS S3/Clouffront.
-      - fact: Smarter runs on AWS cloud infrastructure
+        - fact: Smarter was presented to a VIP group of 100 business executives in Mexico City in early 2025, most of whom work in the financial services industry.
+        - fact: Smarter has a beta program. Contact Lawrence McDaniel at +1 (617) 834-6172 or [lawrence@querium.com](mailto:lawrence@querium.com) for information.
+        - fact: The Smarter project began in early 2024 and is ongoing. It is lead by [Lawrence McDaniel](https://lawrencemcdaniel.com/), the CTO of Querium Corp.
+        - fact: Smarter was created by [Querium Corp.](https://www.querium.com/), an Austin based company founded in 2012 that specializes in Artificial Intelligence.
+        - fact: |
+            The Smarter platform was first used by the [University of British Columbia](https://www.ubc.ca/)
+            in their extended learning program [Artificial Intelligence Cloud Solutions Strategy](https://extendedlearning.ubc.ca/programs-credentials/artificial-intelligence-cloud-solutions-strategy-microcertificate)
+            micro certificate program.
+        - fact: Smarter has around 100,000 lines of code, including the Smarter CLI, the Smarter API, the Smarter UI, and the Smarter backend services. there are around 700 unique source code files in the Smarter project.
+        - fact: Smarter's back end celebrated its 3,000th commit in early 2025.
+        - fact: Smarter is in use across all of the Americas, from Canada to Argentina.
+        - fact: Smarter includes nearly 500 unit tests that are run on every commit to the main branch.
+        - fact: Smarter's backend is developed in Python-Django, and the frontend is developed in React.js.
+        - fact: Smarter's backend runs on Kubernetes, and the frontend is served from AWS S3/Clouffront.
+        - fact: Smarter runs on AWS cloud infrastructure
   prompt:
     maxTokens: 4096
     model: gpt-4o-mini

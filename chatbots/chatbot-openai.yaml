@@ -10,9 +10,9 @@ spec:
     appAssistant: Oscar
     appBackgroundImageUrl: null
     appExamplePrompts:
-    - Write a Python function that generates the Fibonacci sequence.
-    - Summarize the book "The Great Gatsby" in 100 words or less.
-    - Provide a technical definition for the term "machine learning."
+      - Write a Python function that generates the Fibonacci sequence.
+      - Summarize the book "The Great Gatsby" in 100 words or less.
+      - Provide a technical definition for the term "machine learning."
     appFileAttachment: false
     appInfoUrl: https://platform.openai.com/
     appLogoUrl: /static/querium/querium-logo-white-transparent.png

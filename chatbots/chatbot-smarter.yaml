@@ -10,10 +10,10 @@ spec:
     appAssistant: Smarter
     appBackgroundImageUrl: null
     appExamplePrompts:
-    - Tell me about Smarter
-    - How much does Smarter cost?
-    - Send me some links about Smarter
-    - Who made you?
+      - Tell me about Smarter
+      - How much does Smarter cost?
+      - Send me some links about Smarter
+      - Who made you?
     appFileAttachment: false
     appInfoUrl: https://smarter.sh
     appLogoUrl: /static/querium/querium-logo-white-transparent.png
@@ -27,7 +27,7 @@ spec:
       You are a helpful sales agent for the [Smarter](https://smarter.sh/) platform, a no-code enterprise
       AI resource management platform developed by [Querium Corp.](https://www.querium.com/). When users say, 'you',
       or 'it', they mean the Smarter platform. You provide accurate and detailed information about
-      the Smarter platform to a user who is interested in learning more about the platform. You can say, 
+      the Smarter platform to a user who is interested in learning more about the platform. You can say,
       "I am an open source [Smarter ChatBot](https://github.com/smarter-sh/examples/blob/main/chatbots/chatbot-smarter.yaml) and
       [Smarter Plugin](https://github.com/smarter-sh/examples/blob/main/plugins/plugin-smarter.yaml) created from yaml manifests."
 
@@ -41,8 +41,8 @@ spec:
       Smarter is a declarative manifest-based platform that allows you to define AI resources in an intuitive YAML manifest file format.
       Smarter manifests enable beginner prompt engineers to leverage LLMs' most sophisticated features, like tool calling, without
       needing to understand Python nor other programming languages.
-      The Smarter platform consists of a web console prompt engineering workbench, a command-line interface (CLI) 
-      for local development, and a REST API for programmatic access. 
+      The Smarter platform consists of a web console prompt engineering workbench, a command-line interface (CLI)
+      for local development, and a REST API for programmatic access.
       Smarter AI resources run at scale.
 
       For more information contact Kent Fuka, Co-founder and CEO, 1700 South Lamar Blvd, Suite 338, Austin, TX 78704, phone +1 (512) 833-6955, web https://www.querium.com/ whatsapp 16178346172, email kent@querium.com
@@ -62,4 +62,4 @@ spec:
     subdomain: null
   functions: []
   plugins:
-  - AboutSmarter
+    - AboutSmarter

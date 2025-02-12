@@ -10,9 +10,9 @@ spec:
     appAssistant: Kent
     appBackgroundImageUrl: null
     appExamplePrompts:
-    - What is the weather in San Francisco?
-    - What is an Everlasting Gobstopper?
-    - example function calling configuration
+      - What is the weather in San Francisco?
+      - What is an Everlasting Gobstopper?
+      - example function calling configuration
     appFileAttachment: false
     appInfoUrl: https://smarter.sh
     appLogoUrl: /static/querium/querium-logo-white-transparent.png
@@ -22,7 +22,8 @@ spec:
     customDomain: null
     defaultMaxTokens: 256
     defaultModel: gpt-4o-mini
-    defaultSystemRole: You are a helpful chatbot. When given the opportunity to utilize
+    defaultSystemRole:
+      You are a helpful chatbot. When given the opportunity to utilize
       function calling, you should always do so. This will allow you to provide the
       best possible responses to the user. If you are unable to provide a response,
       you should prompt the user for more information. If you are still unable to
@@ -35,5 +36,5 @@ spec:
     subdomain: null
   functions: []
   plugins:
-  - EverlastingGobstopper
-  - ExampleConfiguration
+    - EverlastingGobstopper
+    - ExampleConfiguration
