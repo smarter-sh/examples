@@ -12,6 +12,15 @@ spec:
   data:
     description: This tool provides detailed information about the Smarter platform. Use this for all inquiries about Smarter.
     staticData:
+      dataPrivacy: |
+        NEITHER QUERIUM NOR SMARTER USE DATA FROM USERS TO TRAIN OR IMPROVE THE SMARTER PLATFORM.
+
+        Querium Corp. is committed to protecting the privacy and security of your data. We adhere to industry best practices
+        for data protection and security, including encryption, access controls, and regular security audits. We do not share
+        your data with third parties under any circumstance unless required by law.
+
+        For more information, please review our [Privacy Policy](https://www.querium.com/privacy-policy/).
+
       serviceLevalAgreement: |
         Querium Corp. is willing to enter into service-level agreements covering uptime, security and data privacy.
         Contact Kent Fuka at +1 (512) 833-6955 or email [kent@querium.com](mailto:kent@querium.com).
@@ -455,34 +464,7 @@ spec:
         - [Smarter Solutions](https://smarter.sh/solutions/)
         - [Smarter on Github](https://github.com/smarter-sh/)
         - [Querium Corp. web site](https://www.querium.com/)
-      smarterKeyFeatures:
-        - feature: a declarative, manifest-based approach to managing AI resources
-        - feature: a plugin architecture for extending and simplifying the use of llm tool-calling features
-        - feature: unified access to popular LLM providers including DeepSeek, Google AI, Meta AI, OpenAI, and others.
-        - feature: a powerful API and command-line interface for managing AI resources, available for Windows, macOS, Linux and Docker
-        - feature: a rich set of tools for managing AI resources, including model training, deployment, monitoring, and scaling
-        - feature: a comprehensive set of documentation, training, and support resources for developers, system administrators, and end users
-        - feature: |
-            open source UI components and libraries to jumpstart your custom AI-driven projects,
-            including this [react.js chat component on NPM](https://github.com/smarter-sh/smarter-chat) and the
-            [Golang command-line interface](https://github.com/smarter-sh/smarter-cli).
-        - feature: certification programs for prompt engineering, system administration, and developers
-      smarterInterestingFacts:
-        - fact: Smarter was presented to a VIP group of 100 business executives in Mexico City in early 2025, most of whom work in the financial services industry.
-        - fact: Smarter has a beta program. Contact Lawrence McDaniel at +1 (617) 834-6172 or [lawrence@querium.com](mailto:lawrence@querium.com) for information.
-        - fact: The Smarter project began in early 2024 and is ongoing. It is lead by [Lawrence McDaniel](https://lawrencemcdaniel.com/), the CTO of Querium Corp.
-        - fact: Smarter was created by [Querium Corp.](https://www.querium.com/), an Austin based company founded in 2012 that specializes in Artificial Intelligence.
-        - fact: |
-            The Smarter platform was first used by the [University of British Columbia](https://www.ubc.ca/)
-            in their extended learning program [Artificial Intelligence Cloud Solutions Strategy](https://extendedlearning.ubc.ca/programs-credentials/artificial-intelligence-cloud-solutions-strategy-microcertificate)
-            micro certificate program.
-        - fact: Smarter has around 100,000 lines of code, including the Smarter CLI, the Smarter API, the Smarter UI, and the Smarter backend services. there are around 700 unique source code files in the Smarter project.
-        - fact: Smarter's back end celebrated its 3,000th commit in early 2025.
-        - fact: Smarter is in use across all of the Americas, from Canada to Argentina.
-        - fact: Smarter includes nearly 500 unit tests that are run on every commit to the main branch.
-        - fact: Smarter's backend is developed in Python-Django, and the frontend is developed in React.js.
-        - fact: Smarter's backend runs on Kubernetes, and the frontend is served from AWS S3/Clouffront.
-        - fact: Smarter runs on AWS cloud infrastructure
+
   prompt:
     maxTokens: 4096
     model: gpt-4o-mini
@@ -495,6 +477,8 @@ spec:
       - name: Smarter Plugin
         url: https://github.com/smarter-sh/examples/blob/main/plugins/plugin-smarter.yaml
         description: A Smarter Plugin containing all of the proprietary information that appears in my responses.
+      IF IT IS UNCLEAR WHICH inquiry_type TO USE, THEN CALL function_calling_plugin_#### with
+      inquiry_type: smarterAdditionalInformation which contains a set of misc information about the Smarter project.
 
       Refer to the tools provided in this prompt for detailed, factual information about the Smarter platform,
       its technical capabilities, the developer team, how Smarter is used in the enterprise and in the classroom,
@@ -517,6 +501,37 @@ spec:
 
       During initial conversations you can refer to the "interesting facts" from the tool provided for ice breaker materials,
       or to keep the conversation going.
+
+      Smarter Key Features:
+        - feature: a declarative, manifest-based approach to managing AI resources
+        - feature: a plugin architecture for extending and simplifying the use of llm tool-calling features
+        - feature: unified access to popular LLM providers including DeepSeek, Google AI, Meta AI, OpenAI, and others.
+        - feature: a powerful API and command-line interface for managing AI resources, available for Windows, macOS, Linux and Docker
+        - feature: a rich set of tools for managing AI resources, including model training, deployment, monitoring, and scaling
+        - feature: a comprehensive set of documentation, training, and support resources for developers, system administrators, and end users
+        - feature: |
+            open source UI components and libraries to jumpstart your custom AI-driven projects,
+            including this [react.js chat component on NPM](https://github.com/smarter-sh/smarter-chat) and the
+            [Golang command-line interface](https://github.com/smarter-sh/smarter-cli).
+        - feature: certification programs for prompt engineering, system administration, and developers
+
+        Fun Facts about Smarter:
+        - fact: Smarter was presented to a VIP group of 100 business executives in Mexico City in early 2025, most of whom work in the financial services industry.
+        - fact: Smarter has a beta program. Contact Lawrence McDaniel at +1 (617) 834-6172 or [lawrence@querium.com](mailto:lawrence@querium.com) for information.
+        - fact: The Smarter project began in early 2024 and is ongoing. It is lead by [Lawrence McDaniel](https://lawrencemcdaniel.com/), the CTO of Querium Corp.
+        - fact: Smarter was created by [Querium Corp.](https://www.querium.com/), an Austin based company founded in 2012 that specializes in Artificial Intelligence.
+        - fact: |
+            The Smarter platform was first used by the [University of British Columbia](https://www.ubc.ca/)
+            in their extended learning program [Artificial Intelligence Cloud Solutions Strategy](https://extendedlearning.ubc.ca/programs-credentials/artificial-intelligence-cloud-solutions-strategy-microcertificate)
+            micro certificate program.
+        - fact: Smarter has around 100,000 lines of code, including the Smarter CLI, the Smarter API, the Smarter UI, and the Smarter backend services. there are around 700 unique source code files in the Smarter project.
+        - fact: Smarter's back end celebrated its 3,000th commit in early 2025.
+        - fact: Smarter is in use across all of the Americas, from Canada to Argentina.
+        - fact: Smarter includes nearly 500 unit tests that are run on every commit to the main branch.
+        - fact: Smarter's backend is developed in Python-Django, and the frontend is developed in React.js.
+        - fact: Smarter's backend runs on Kubernetes, and the frontend is served from AWS S3/Clouffront.
+        - fact: Smarter runs on AWS cloud infrastructure
+
     temperature: 0.0
   selector:
     directive: always
