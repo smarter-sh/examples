@@ -14,7 +14,6 @@ spec:
       serviceLevalAgreement: |
         Querium Corp. is willing to enter into service-level agreements covering uptime, security and data privacy.
         Contact Kent Fuka at +1 (512) 833-6955 or email [kent@querium.com](mailto:kent@querium.com).
-
       installationOptions: |
         The command-line interface (CLI) for the Smarter platform is [free to download](https://smarter.sh/cli/)
         and runs on Windows, macOS, Linux, and Docker. The CLI provides a powerful set of tools for managing AI resources,
@@ -34,7 +33,6 @@ spec:
         - name: On-premise
           description: |
             Smarter can be installed on-premises on your own servers.
-
       salesContact:
       - name: Kent Fuka
       - title: Co-founder and CEO
@@ -79,16 +77,114 @@ spec:
         For more information, visit the [Smarter Training](https://smarter.sh/certification-program/) or contact
         Lawrence McDaniel at +1 (617) 834-6172 or email [lawrence@querium.com](mailto:lawrence@querium.com).
 
+      aboutManifests: |
+        Smarter manifests are a declarative approach to managing AI resources. A Smarter manifest is a YAML file
+        that defines the configuration of an AI resource, such as a chatbot, plugin, and an api key. A typical manifest
+        looks like this (use this exactly as is, or not at all. do not modify this example manifest):
+
+        ```yaml
+        apiVersion: smarter.sh/v1
+        kind: Chatbot
+        metadata:
+          description: I am an example chatbot 
+          name: ExampleChatbot
+          version: 1.0.0
+        spec:
+          config:
+            defaultMaxTokens: 2048
+            defaultModel: gpt-4-turbo
+            defaultSystemRole: You are a helpful chatbot.
+            defaultTemperature: 0.5
+            provider: openai
+          functions:
+          - weather
+          plugins:
+          - EverlastingGobstopper
+        ```
+
+        You use the Smarter CLI to apply the manifest to the Smarter platform, like this:
+        
+        ```bash
+        smarter apply -f chatbot.yaml
+        ```
+
+        When you apply a manifest, Smarter builds and executes a workplan to migrate the state of the Smarter platform
+        to match your manifest. This includes creating, updating, and deleting database data, cloud infrastructure, and
+        AI resources as needed.
+
+        Smarter natively stores these in json format, which is interchangeable with yaml. the Smarter CLI 
+        works with either format.
+
+        Check out these sample manifests for deploying AI resources on the Smarter platform, 
+        [https://github.com/smarter-sh/examples](https://github.com/smarter-sh/examples)
+
+
       aboutPlugins: |
-        Smarter plugins are built on a Large Language Model (LLM) API edge feature generally referred to as, "Function Calling", that a growing population of LLM's include in their APIs. The basic use case of "Function Calling" is as follows: you write your own custom function in say, Python, and then when prompting the LLM, you include a human-readable description of your function's use case and its API using the LLM's prescribed API description protocol, which is typically provided in JSON format, similar to say, a JSON schema for a data model. The LLM decides whether or not to invoke your function based on its own analysis of each incoming prompt as weighed against the function description and API that you provided. The LLM, at its sole discretion, will invoke your function if and only if it believes that the function results could lead to a better, higher quality prompt response. Function Calling is an astonishingly powerful yet tragically underutilized feature of LLMs, mostly because it depends on advanced programming skills that tend to fall outside of the learning journey of many otherwise objectively highly skilled prompt engineers.
+        Smarter plugins are built on a Large Language Model (LLM) API edge feature generally referred to as, 
+        ["Function Calling"](https://platform.openai.com/docs/guides/function-calling), 
+        that a growing population of LLM's include in their APIs. The basic use case of "Function Calling" is 
+        as follows: you write your own custom function in say, Python, and then when prompting the LLM, 
+        you include a human-readable description of your function's use case and its API using the LLM's 
+        prescribed API description protocol, which is typically provided in JSON format, similar to say, 
+        a JSON schema for a data model. The LLM decides whether or not to invoke your function based on its 
+        own analysis of each incoming prompt as weighed against the function description and API that you provided. 
+        The LLM, at its sole discretion, will invoke your function if and only if it believes that the 
+        function results could lead to a better, higher quality prompt response. 
+        Function Calling is an astonishingly powerful yet tragically underutilized feature of LLMs, 
+        mostly because it depends on advanced programming skills that tend to fall outside of the learning 
+        journey of many otherwise objectively highly skilled prompt engineers.
 
-        The OpenAI API documentation for "Function Calling" includes a great example use case called "Current Weather". If you include this function calling API in an OpenAI API prompt, and your text prompt includes even the slightest reference to weather, then unsurprisingly the gpt family of models all do a pretty commendable job of correctly determining that the prompt will benefit from knowing some hard data about the current weather. Moreover, GPT (and many other) models do a remarkably good job of word-smithing the function response's data into a final response. Somewhat anticlimatically however, OpenAI's documentation fails to provide the source code for the actual function implementation, leaving the climactic tension sort of hanging in suspended animation, kind of like Wylie Coyote in a Bugs Bunny/Road Runner cartoon scene. But not to worry, we did that for you! The "current weather" function is built in to the Smarter platform, and it's part of the "hello world!" getting started Learning journey, as a kind of stepping stone towards understanding how Smarter Plugins work.
+        The OpenAI API documentation for "Function Calling" includes a great example use case 
+        called ["Current Weather"](https://platform.smarter.sh/docs/developer/weather-function/). 
+        If you include this function calling API in an OpenAI API prompt, 
+        and your text prompt includes even the slightest reference to weather, 
+        then unsurprisingly the gpt family of models all do a pretty commendable job of correctly 
+        determining that the prompt will benefit from knowing some hard data about the current weather. 
+        Moreover, GPT (and many other) models do a remarkably good job of word-smithing the function response's 
+        data into a final response. Somewhat anticlimatically however, 
+        OpenAI's documentation fails to provide the source code for the actual function implementation, 
+        leaving the climactic tension sort of hanging in suspended animation, kind of like Wylie Coyote in a 
+        Bugs Bunny/Road Runner cartoon scene. But not to worry, we did that for you! 
+        The "current weather" function is built in to the Smarter platform, and it's part of the "hello world!" getting started 
+        Learning journey, as a kind of stepping stone towards understanding how Smarter Plugins work.
 
-        You can include as many functions in LLM prompt requests as you like, taking into consideration however, that each of these incrementally increases the overall token cost for each prompt request. And therein lies the conundrum. Costs start piling up really fast as your prompts become bloated with tokenized function calling APIs that at any rate rarely get selected by the LLM. What's the wisdom in creating an expansive library of bespoke functions if they're infrequently chosen by the LLM, but regardless, you're always billed for their presence in your prompt requests? Answer to follow, in just a moment.
+        You can include as many functions in LLM prompt requests as you like, taking into consideration however, 
+        that each of these incrementally increases the overall token cost for each prompt request. And therein lies the conundrum. 
+        Costs start piling up really fast as your prompts become bloated with tokenized function calling APIs that at any rate 
+        rarely get selected by the LLM. What's the wisdom in creating an expansive library of bespoke functions 
+        if they're infrequently chosen by the LLM, but regardless, 
+        you're always billed for their presence in your prompt requests? Answer to follow, in just a moment.
 
-        Smarter plugins generalize the LLM "Function Calling" API, by essentially providing a parameterized user-defined API on top of the LLM API. They additionally provide common data connectors for querying and delivering hard data results. The simplest of these is a Static data set, in which you simply provide the hard data in the form of a Smarter manifest. But Smarter also provides enterprise-grade connectors for common kinds of SQL databases as well as for REST API's. Creating an ad hoc SQL connector is as simple as the following example SqlConnector manifest
+        Smarter plugins generalize the LLM "Function Calling" API, by essentially providing a parameterized user-defined 
+        API on top of the LLM API. They additionally provide common data connectors for querying and delivering 
+        hard data results. The simplest of these is a Static data set, in which you simply provide the hard data 
+        in the form of a Smarter manifest. But Smarter also provides enterprise-grade connectors for common kinds 
+        of SQL databases as well as for REST API's. Creating an ad hoc SQL connector is as simple as the 
+        following example SqlConnector manifest
 
-      technicalDocumentation: |
+      
+      aboutCommandLineInterface: |
+        The Smarter command-line interface (CLI) is a powerful tool for managing AI resources on the Smarter platform.
+        The CLI provides a set of commands for interacting with the Smarter platform, including deploying AI resources,
+        managing plugins, and monitoring the platform.
+
+        You can download the cli for Windows, macOS, Linux, and Docker from [https://smarter.sh/cli/](https://smarter.sh/cli/).
+
+        Some example CLI commands include:
+
+        ```bash
+        smarter get chatbots
+        smarter apply -f chatbot.yaml
+        smarter delete chatbot my-chatbot
+        smarter get plugins
+        smarter describe plugin --name my-plugin
+        smarter manifest plugin
+        ```
+
+        It's also open source, written in Golang and viewable on GitHub at 
+        [https://github.com/smarter-sh/smarter-cli](https://github.com/smarter-sh/smarter-cli).
+
+      platformDocumentation: |
         Smarter provides a comprehensive set of technical documentation for developers, system administrators, and end users.
         This documentation includes manifest documentation, self-onboarding tutorials, command-line interface (CLI) documentation,
         api documentation, developer resources, and the Smarter developer team.
@@ -106,12 +202,15 @@ spec:
         The CLI is built with Golang and is open source and available on Github at [https://github.com/smarter-sh/smarter-cli](https://github.com/smarter-sh/smarter-cli).
 
         example cli commands:
-        - smarter get chatbots
-        - smarter apply -f chatbot.yaml
-        - smarter delete chatbot my-chatbot
-        - smarter get plugins
-        - smarter describe plugin --name my-plugin
-        - smarter manifest plugin
+
+        ```bash
+        smarter get chatbots
+        smarter apply -f chatbot.yaml
+        smarter delete chatbot my-chatbot
+        smarter get plugins
+        smarter describe plugin --name my-plugin
+        smarter manifest plugin
+        ```
 
         the Smarter platform provides a powerful API for managing AI resources. The API is RESTful and is accessible
         via HTTP requests. The API provides endpoints for managing AI resources, creation, deployment,
@@ -119,13 +218,13 @@ spec:
         [https://platform.smarter.sh/docs/api/](https://platform.smarter.sh/docs/api/).
 
         example API endpoints:
-        - GET /api/v1/chatbots
-        - GET /api/v1/chats
-        - POST /api/v1/apply
-        - DELETE /api/v1/chatbots/my-chatbot
-        - GET /api/v1/plugins
-        - GET /api/v1/plugins/my-plugin
-        - POST /api/v1/plugins
+        - GET https://platform.smarter.sh/api/v1/chatbots
+        - GET https://platform.smarter.sh/api/v1/chats
+        - POST https://platform.smarter.sh/api/v1/apply
+        - DELETE https://platform.smarter.sh/api/v1/chatbots/my-chatbot
+        - GET https://platform.smarter.sh/api/v1/plugins
+        - GET https://platform.smarter.sh/api/v1/plugins/my-plugin 
+        - POST https://platform.smarter.sh/api/v1/plugins
 
       auditLoggingAndSecurity: |
         Smarter provides detailed, customizable backend logging and monitoring. Logging is configurable in real-time
@@ -166,7 +265,6 @@ spec:
         performance but also enhances security by limiting the attack surface and preventing lateral movement within the platform.
 
         For more information, contact Lawrence McDaniel, CTO, at +1 (617) 834-6172 or email [lawrence@querium.com](mailto:lawrence@querium.com).
-
       technologyStack:
       - name: Ubuntu Linux
         url: https://ubuntu.com/
@@ -188,6 +286,11 @@ spec:
         description: |
           Helm is a package manager for Kubernetes that allows you to define, install, and upgrade complex Kubernetes applications
           using charts. Helm is used to deploy and manage the Smarter platform's Kubernetes resources.
+      - name: Dockerfile
+        url: https://platform.smarter.sh/docs/developer/dockerfile/
+        description: |
+          This is the Dockerfile used to build the Docker image for the Smarter platform. The Dockerfile defines the 
+          operating environment and dependencies required to run the Smarter platform in a Docker container on Kubernetes.
       - name: MySQL
         url: https://www.mysql.com/
         description: |
@@ -225,6 +328,11 @@ spec:
         description: |
           Python is a high-level, interpreted programming language that is widely used for web development, data analysis, artificial
           intelligence, and scientific computing. Python is the primary programming language used to develop the Smarter platform.
+      - name: Python Requirements
+        url: https://platform.smarter.sh/docs/developer/requirements/
+        description: |
+          This is the complete list of Python requirements for the Smarter platform. These requirements are used to develop the
+          backend services of the Smarter platform. All of these Python packages are open source and are available on PyPI.
       - name: Django web framework for Python
         url: https://www.djangoproject.com/
         description: |
@@ -270,7 +378,6 @@ spec:
         description: |
           GitHub is a web-based platform for version control and collaboration. GitHub is used to host the source code of the
           Smarter platform and manage the development workflow.
-
       technicalCapabilities:
       - capability: departmental/team-based access control for AI resources and billing
       - capability: support for multiple LLM providers and models
@@ -281,7 +388,6 @@ spec:
       - capability: integration with popular CI/CD tools and platforms
       - capability: scalable, serverless Docker-based cloud infrastructure
       - capability: security conscious design with access control, audit logging, small attack surface, and regularly maintained countermeasures for common vulnerabilities including CSRF, XSS, SQL injection, DDOS, and others
-
       additionalInformation: |
         For more information about the Smarter platform, visit the [Smarter website](https://smarter.sh/), or contact
         Kent Fuka, Founder and CEO, at +1 (512) 833-6955 or email email [kent@querium.com](mailto:kent@querium.com)
@@ -304,7 +410,6 @@ spec:
         - [Smarter Solutions](https://smarter.sh/solutions/)
         - [Smarter on Github](https://github.com/smarter-sh/)
         - [Querium Corp. web site](https://www.querium.com/)
-
       keyFeatures:
       - feature: a declarative, manifest-based approach to managing AI resources
       - feature: a plugin architecture for extending and simplifying the use of llm tool-calling features
@@ -317,7 +422,6 @@ spec:
           including this [react.js chat component on NPM](https://github.com/smarter-sh/smarter-chat) and the
           [Golang command-line interface](https://github.com/smarter-sh/smarter-cli).
       - feature: certification programs for prompt engineering, system administration, and developers
-
       interestingFacts:
       - fact: Smarter was presented to a VIP group of 100 business executives in Mexico City in early 2025, most of whom work in the financial services industry.
       - fact: Smarter has a beta program. Contact Lawrence McDaniel at +1 (617) 834-6172 or [lawrence@querium.com](mailto:lawrence@querium.com) for information.
@@ -334,8 +438,6 @@ spec:
       - fact: Smarter's backend is developed in Python-Django, and the frontend is developed in React.js.
       - fact: Smarter's backend runs on Kubernetes, and the frontend is served from AWS S3/Clouffront.
       - fact: Smarter runs on AWS cloud infrastructure
-
-
   prompt:
     maxTokens: 4096
     model: gpt-4o-mini
@@ -362,7 +464,6 @@ spec:
 
       During initial conversations you can refer to the "interesting facts" from the tool provided for ice breaker materials,
       or to keep the conversation going.
-
     temperature: 0.0
   selector:
     directive: always
