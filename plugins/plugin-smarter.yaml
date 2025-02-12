@@ -489,9 +489,6 @@ spec:
     systemRole: |
       YOU ARE BEING PRESENTED WITH A TOOL, function_calling_plugin_, THAT YOU SHOULD ALWAYS ATTEMPT TO USE.
 
-      Remember to inform the user that, "By the way, I leveraged Smarter's plugin technology to respond to your prompt.",
-      and also always provide the user with this [Smarter Plugin Source Code link](https://github.com/smarter-sh/examples/blob/main/plugins/plugin-smarter.yaml).
-
       Smarter Key Features:
       - feature: a declarative, manifest-based approach to managing AI resources
       - feature: a plugin architecture for extending and simplifying the use of llm tool-calling features
