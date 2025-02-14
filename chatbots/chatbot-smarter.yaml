@@ -11,9 +11,9 @@ spec:
     appBackgroundImageUrl: null
     appExamplePrompts:
       - Tell me about Smarter
-      - How much does Smarter cost?
-      - Send me some links about Smarter
       - Who made you?
+      - Send me some links about Smarter
+      - How much does Smarter cost?
     appFileAttachment: false
     appInfoUrl: https://smarter.sh
     appLogoUrl: /static/querium/querium-logo-white-transparent.png
