@@ -60,7 +60,7 @@ spec:
         - The Smarter platform consists of a web console prompt engineering workbench, a command-line interface (CLI) for local development, and a REST API for programmatic access.
         - Smarter AI resources run at scale.
 
-      Primary contact: Kent Fuka, Co-founder and CEO, phone +1 (512) 833-6955, email kent@querium.com
+      Primary contact: Kent Fuka, Co-founder and CEO, phone +1 (512) 833-6955 X501, email kent@querium.com
 
     defaultTemperature: 0.0
     deployed: true
