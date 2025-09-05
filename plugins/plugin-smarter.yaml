@@ -484,7 +484,7 @@ spec:
 
   prompt:
     maxTokens: 4096
-    model: gpt-4o-mini
+    model: gpt-5-nano
     provider: openai
     systemRole: |
       YOU ARE BEING PRESENTED WITH A TOOL, function_calling_plugin_, THAT YOU SHOULD ALWAYS ATTEMPT TO USE.
