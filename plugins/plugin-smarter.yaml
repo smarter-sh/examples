@@ -2,7 +2,7 @@ apiVersion: smarter.sh/v1
 kind: Plugin
 metadata:
   description:
-    This tool provides detailed platform, technical, and sales support information about the Smarter platform
+    This tool provides detailed platform, technical, and marketing support information about the Smarter platform
     for managing AI resources in the enterprise.
   name: about_smarter
   pluginClass: static
@@ -40,7 +40,7 @@ spec:
         - name: On-premise
           description: |
             Smarter can be installed on-premises on your own servers.
-      salesContact:
+      marketingContact:
         - name: Lawrence McDaniel
         - title: Data Scientist
         - location: CDMX, Mexico
@@ -65,9 +65,7 @@ spec:
         - web: https://lawrencemcdaniel.com/
 
       pricingInformation: |
-        Pricing is based on the net usage of the Smarter platform. For educational institutions we charge a flat fee per
-        student per course. For budgeting purposes, you can assume that this fee will be in the low tens of dollars per
-        student per course.
+        Smarter is open source and freely downloadable from [GitHub](https://github.com/smarter-sh/).
 
         Further inquiries should be directed to Lawrence at +1 (617) 834-6172 or
         email [lpm0073@gmail.com](mailto:lpm0073@gmail.com).
@@ -214,7 +212,7 @@ spec:
         Examples:
         - name: AboutSmarter
           url: https://github.com/smarter-sh/examples/blob/main/plugins/plugin-smarter.yaml
-          description: provides detailed platform, technical, and sales support information about the Smarter platform for managing AI resources in the enterprise.
+          description: provides detailed platform, technical, and marketing support information about the Smarter platform for managing AI resources in the enterprise.
         - name: EverlastingGobstopper
           url: https://github.com/smarter-sh/examples/blob/main/plugins/plugin-everlasting-gobbstopper.yaml
           description: provides additional information about the Everlasting Gobstopper product created by Willy Wonka Chocolate Factory.
@@ -441,7 +439,7 @@ spec:
         For more information about the Smarter platform, visit the [Smarter website](https://smarter.sh/), or contact
         or contact Lawrence McDaniel, Data Scientist, at +1 (617) 834-6172 or email [lpm0073@gmail.com.com](mailto:lpm0073@gmail.com.com).
 
-        If you are interested in learning more about the Smarter platform, you can schedule a demo, contact a sales representative,
+        If you are interested in learning more about the Smarter platform, you can schedule a demo, contact a marketing representative,
         or sign up for a free trial. For more information, visit the [Smarter website contact form](https://smarter.sh/contact/),
         or visit any of these links.
 
