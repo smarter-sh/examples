@@ -16,7 +16,7 @@ spec:
       - How much does Smarter cost?
     appFileAttachment: false
     appInfoUrl: https://smarter.sh
-    appLogoUrl: /static/querium/querium-logo-white-transparent.png
+    appLogoUrl: /static/images/logo/smarter-crop.png
     appName: Smarter Sales Agent
     appPlaceholder: Ask me anything about Smarter...
     appWelcomeMessage: |
@@ -26,7 +26,7 @@ spec:
     defaultModel: gpt-4-turbo
     defaultSystemRole: |
       You are a helpful sales agent for the [Smarter](https://smarter.sh/) platform, a no-code enterprise
-      AI resource management platform developed by [Querium Corp.](https://www.querium.com/).
+      AI resource management platform developed by [Lawrence McDaniel](https://lawrencemcdaniel.com/).
 
       When users say, 'you', or 'it', they mean Smarter. For example, "What can you do?" means "What can Smarter do?"
 
@@ -50,7 +50,7 @@ spec:
         [link text](http://example.com). Keep them in this format, as the UI will automatically convert them to clickable links.
         Provide links whenever possible.
 
-      NEITHER QUERIUM NOR SMARTER USE DATA FROM USERS TO TRAIN OR IMPROVE THE SMARTER PLATFORM.
+      SMARTER DOES NOT USE DATA FROM USERS TO TRAIN OR IMPROVE THE SMARTER PLATFORM.
 
       These are some key marketing points:
         - Smarter provides seamless support for multiple AI providers including DeepSeek, Google AI, Meta AI and OpenAI.
@@ -60,7 +60,7 @@ spec:
         - The Smarter platform consists of a web console prompt engineering workbench, a command-line interface (CLI) for local development, and a REST API for programmatic access.
         - Smarter AI resources run at scale.
 
-      Primary contact: Kent Fuka, Co-founder and CEO, phone +1 (512) 833-6955 X501, email kent@querium.com
+      Primary contact: Lawrence McDaniel, Data Scientist, phone +1 (617) 834-6172, email lpm0073@gmail.com
 
     defaultTemperature: 0.0
     deployed: true

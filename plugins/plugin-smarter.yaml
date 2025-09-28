@@ -13,17 +13,14 @@ spec:
     description: This tool provides detailed information about the Smarter platform. Use this for all inquiries about Smarter.
     staticData:
       dataPrivacy: |
-        NEITHER QUERIUM NOR SMARTER USE DATA FROM USERS TO TRAIN OR IMPROVE THE SMARTER PLATFORM.
+        SMARTER DOES NOT USE DATA FROM USERS TO TRAIN OR IMPROVE THE SMARTER PLATFORM.
 
-        Querium Corp. is committed to protecting the privacy and security of your data. We adhere to industry best practices
+        Smarter is committed to protecting the privacy and security of your data. We adhere to industry best practices
         for data protection and security, including encryption, access controls, and regular security audits. We do not share
         your data with third parties under any circumstance unless required by law.
 
-        For more information, please review our [Privacy Policy](https://www.querium.com/privacy-policy/).
+        For more information, please review our [Privacy Policy](https://www.smarter.sh/privacy-policy/).
 
-      serviceLevalAgreement: |
-        Querium Corp. is willing to enter into service-level agreements covering uptime, security and data privacy.
-        Contact Kent Fuka at +1 (512) 833-6955 or email [kent@querium.com](mailto:kent@querium.com).
       installationOptions: |
         The command-line interface (CLI) for the Smarter platform is [free to download](https://smarter.sh/cli/)
         and runs on Windows, macOS, Linux, and Docker. The CLI provides a powerful set of tools for managing AI resources,
@@ -39,34 +36,32 @@ spec:
             Invoiced monthly based on net usage.
         - name: Cloud
           description: |
-            Smarter can be installed on your cloud infrastructure and maintained by the Querium team.
+            Smarter can be installed on your cloud infrastructure and maintained by the Smarter team.
         - name: On-premise
           description: |
             Smarter can be installed on-premises on your own servers.
       salesContact:
-        - name: Kent Fuka
-        - title: Co-founder and CEO
-        - location: 1700 South Lamar Blvd, Suite 338, Austin, TX 78704
-        - phone: +1 (512) 833-6955
-        - website: https://www.querium.com/
-        - whatsapp: 16178346172
-        - email: kent@querium.com
+        - name: Lawrence McDaniel
+        - title: Data Scientist
+        - location: CDMX, Mexico
+        - whatsapp: +1 (617) 834-6172
+        - email: lpm0073@gmail.com
+        - web: https://lawrencemcdaniel.com/
 
       legalContact:
-        - name: Kent Fuka
-        - title: Co-founder and CEO
-        - location: 1700 South Lamar Blvd, Suite 338, Austin, TX 78704
-        - phone: +1 (512) 833-6955
-        - website: https://www.querium.com/
-        - whatsapp: 16178346172
-        - email: kent@querium.com
+        - name: Lawrence McDaniel
+        - title: Data Scientist
+        - location: CDMX, Mexico
+        - whatsapp: +1 (617) 834-6172
+        - email: lpm0073@gmail.com
+        - web: https://lawrencemcdaniel.com/
 
       technicalSupport:
         - name: Lawrence McDaniel
-        - title: Chief Technology Officer
+        - title: Data Scientist
         - location: CDMX, Mexico
-        - phone: +1 (617) 834-6172
-        - email: lawrence@querium.com
+        - whatsapp: +1 (617) 834-6172
+        - email: lpm0073@gmail.com
         - web: https://lawrencemcdaniel.com/
 
       pricingInformation: |
@@ -75,7 +70,7 @@ spec:
         student per course.
 
         Further inquiries should be directed to Kent at +1 (512) 833-6955 or
-        email [kent@querium.com](mailto:kent@querium.com).
+        email [lpm0073@gmail.com](mailto:lpm0073@gmail.com).
 
       trainingAndOnboarding: |
         Smarter provides a comprehensive set of training and onboarding resources for developers, system administrators,
@@ -85,7 +80,7 @@ spec:
         We offer on-site training and onboarding for enterprise customers and large educational institutions.
 
         For more information, visit the [Smarter Training](https://smarter.sh/certification-program/) or contact
-        Lawrence McDaniel at +1 (617) 834-6172 or email [lawrence@querium.com](mailto:lawrence@querium.com).
+        Lawrence McDaniel at +1 (617) 834-6172 or email [lpm0073@gmail.com.com](mailto:lpm0073@gmail.com.com).
 
       smarterApi: |
         The Smarter platform provides a powerful API for managing AI resources. The API is RESTful and is accessible
@@ -254,7 +249,7 @@ spec:
         api documentation, developer resources, and the Smarter developer team.
 
         For more information, visit the [Smarter Documentation Portal](https://platform.smarter.sh/docs/) or contact
-        Lawrence McDaniel at +1 (617) 834-6172 or email [lawrence@querium.com](mailto:lawrence@querium.com).
+        Lawrence McDaniel at +1 (617) 834-6172 or email [lpm0073@gmail.com.com](mailto:lpm0073@gmail.com.com).
 
         Check out Smarter on GitHub for code samples, at [https://github.com/smarter-sh/](https://github.com/smarter-sh/).
         You should also take a look at these sample manifests for deploying AI resources on the Smarter platform,
@@ -328,7 +323,7 @@ spec:
         and we use security groups and network ACLs to control traffic between different parts of the platform. This not only optimizes
         performance but also enhances security by limiting the attack surface and preventing lateral movement within the platform.
 
-        For more information, contact Lawrence McDaniel, CTO, at +1 (617) 834-6172 or email [lawrence@querium.com](mailto:lawrence@querium.com).
+        For more information, contact Lawrence McDaniel, CTO, at +1 (617) 834-6172 or email [lpm0073@gmail.com.com](mailto:lpm0073@gmail.com.com).
       smarterTechnologyStack:
         - name: Ubuntu Linux
           url: https://ubuntu.com/
@@ -444,8 +439,8 @@ spec:
             Smarter platform and manage the development workflow.
       smarterAdditionalInformation: |
         For more information about the Smarter platform, visit the [Smarter website](https://smarter.sh/), or contact
-        Kent Fuka, Founder and CEO, at +1 (512) 833-6955 or email email [kent@querium.com](mailto:kent@querium.com)
-        or contact Lawrence McDaniel, CTO, at +1 (617) 834-6172 or email [lawrence@querium.com](mailto:lawrence@querium.com).
+        Kent Fuka, Founder and CEO, at +1 (512) 833-6955 or email email [lpm0073@gmail.com](mailto:lpm0073@gmail.com)
+        or contact Lawrence McDaniel, CTO, at +1 (617) 834-6172 or email [lpm0073@gmail.com.com](mailto:lpm0073@gmail.com.com).
 
         If you are interested in learning more about the Smarter platform, you can schedule a demo, contact a sales representative,
         or sign up for a free trial. For more information, visit the [Smarter website contact form](https://smarter.sh/contact/),
@@ -463,13 +458,12 @@ spec:
         - [Smarter Certification Program](https://smarter.sh/certification-program/). These are for prompt engineering, system administration, and developers.
         - [Smarter Solutions](https://smarter.sh/solutions/)
         - [Smarter on Github](https://github.com/smarter-sh/)
-        - [Querium Corp. web site](https://www.querium.com/)
 
         Interesting facts:
         - fact: Smarter was presented to a VIP group of 100 business executives in Mexico City in early 2025, most of whom work in the financial services industry.
-        - fact: Smarter has a beta program. Contact Lawrence McDaniel at +1 (617) 834-6172 or [lawrence@querium.com](mailto:lawrence@querium.com) for information.
-        - fact: The Smarter project began in early 2024 and is ongoing. It is lead by [Lawrence McDaniel](https://lawrencemcdaniel.com/), the CTO of Querium Corp.
-        - fact: Smarter was created by [Querium Corp.](https://www.querium.com/), an Austin based company founded in 2012 that specializes in Artificial Intelligence.
+        - fact: Smarter has a beta program. Contact Lawrence McDaniel at +1 (617) 834-6172 or [lpm0073@gmail.com.com](mailto:lpm0073@gmail.com.com) for information.
+        - fact: The Smarter project began in early 2024 and is ongoing. It is lead by [Lawrence McDaniel](https://lawrencemcdaniel.com/), a data scientist.
+        - fact: Smarter was created by [Lawrence McDaniel](https://lawrencemcdaniel.com/), a data scientist who specializes in Artificial Intelligence and data-driven systems.
         - fact: |
             The Smarter platform was first used by the [University of British Columbia](https://www.ubc.ca/)
             in their extended learning program [Artificial Intelligence Cloud Solutions Strategy](https://extendedlearning.ubc.ca/programs-credentials/artificial-intelligence-cloud-solutions-strategy-microcertificate)
