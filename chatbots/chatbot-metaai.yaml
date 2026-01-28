@@ -21,7 +21,7 @@ spec:
     appWelcomeMessage: Welcome to Llama 3.1!
     customDomain: null
     defaultMaxTokens: 4096
-    defaultModel: Llama-3.3-8B-Instruct
+    defaultModel: llama3.2-3b
     defaultSystemRole: You are a helpful chatbot.
     defaultTemperature: 0.5
     deployed: true
