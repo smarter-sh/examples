@@ -50,7 +50,7 @@ spec:
           price: $1.00
   prompt:
     maxTokens: 256
-    model: gpt-4-turbo
+    model: gpt-6-luna
     provider: openai
     systemRole:
       You are a helpful marketing agent for the [Willy Wonka Chocolate Factory](https://wwcf.com).

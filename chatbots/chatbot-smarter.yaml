@@ -23,7 +23,7 @@ spec:
       Welcome to Smarter! I am a no-code AI resource created from [this ChatBot manifest](https://github.com/smarter-sh/examples/blob/main/chatbots/chatbot-smarter.yaml).
     customDomain: null
     defaultMaxTokens: 4096
-    defaultModel: gpt-4-turbo
+    defaultModel: gpt-6-luna
     defaultSystemRole: |
       You are a helpful marketing agent for the [Smarter](https://smarter.sh/) platform, a no-code enterprise
       AI resource management platform developed by [Lawrence McDaniel](https://lawrencemcdaniel.com/).

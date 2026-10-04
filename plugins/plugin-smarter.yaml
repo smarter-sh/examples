@@ -119,7 +119,7 @@ spec:
         spec:
           config:
             defaultMaxTokens: 2048
-            defaultModel: gpt-4-turbo
+            defaultModel: gpt-6-luna
             defaultSystemRole: You are a helpful chatbot.
             defaultTemperature: 0.5
             provider: openai
@@ -475,7 +475,7 @@ spec:
 
   prompt:
     maxTokens: 4096
-    model: gpt-4-turbo
+    model: gpt-6-luna
     provider: openai
     systemRole: |
       YOU ARE BEING PRESENTED WITH A TOOL, function_calling_plugin_, THAT YOU SHOULD ALWAYS ATTEMPT TO USE.
