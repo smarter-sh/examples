@@ -493,6 +493,6 @@ spec:
           [Golang command-line interface](https://github.com/smarter-sh/smarter-cli).
       - feature: certification programs for prompt engineering, system administration, and developers
 
-    temperature: 0.0
+    temperature: 1.0
   selector:
     directive: always

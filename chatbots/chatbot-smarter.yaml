@@ -64,7 +64,7 @@ spec:
 
       Primary contact: Lawrence McDaniel, Data Scientist, phone +1 (617) 834-6172, email lpm0073@gmail.com
 
-    defaultTemperature: 0.0
+    defaultTemperature: 1.0
     deployed: true
     dnsVerificationStatus: Verified
     provider: openai
