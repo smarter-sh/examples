@@ -12,11 +12,6 @@ metadata:
   version: 0.2.0
 spec:
   data:
-    description:
-      Get additional information about the Everlasting Gobstopper product
-      created by Willy Wonka Chocolate Factory. Information includes sales promotions,
-      coupon codes, company contact information and biographical background on the
-      company founder.
     staticData:
       biographical: |
         Willy Wonka is a fictional character appearing in British author Roald Dahl's 1964 children's novel Charlie and the Chocolate Factory, its 1972 sequel Charlie and the Great Glass Elevator and several films based on those books. He is the eccentric founder and proprietor of the Wonka Chocolate Factory
