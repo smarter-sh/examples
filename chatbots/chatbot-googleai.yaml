@@ -1,5 +1,5 @@
 apiVersion: smarter.sh/v1
-kind: Chatbot
+kind: LLMClient
 metadata:
   description: "A GoogleAI Gemini pass-through chatbot."
   name: googleai

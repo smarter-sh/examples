@@ -1,5 +1,5 @@
 apiVersion: smarter.sh/v1
-kind: Chatbot
+kind: LLMClient
 metadata:
   description: "A Smarter Plugin PR Agent"
   name: smarter

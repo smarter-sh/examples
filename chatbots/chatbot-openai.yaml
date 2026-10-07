@@ -1,5 +1,5 @@
 apiVersion: smarter.sh/v1
-kind: Chatbot
+kind: LLMClient
 metadata:
   description: "An OpenAI ChatGPT 4 pass-through chatbot."
   name: openai

@@ -10,7 +10,7 @@ A Smarter Manifest is a YAML document that describes a resource that makes up pa
 
 ```yaml
 apiVersion: smarter.sh/v1
-kind: Chatbot
+kind: LLMClient
 metadata:
   # Metadata about your resource goes here. These required fields are used for identifying
   # and managing your resource inside of Smarter.
